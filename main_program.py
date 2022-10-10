@@ -4,20 +4,18 @@ import objects_library
 
 print("Gene-ops CLI version -- testing")
 
-DNA_pattern = objects_library.give_DNA()
-"\n"
-RNA_pattern = objects_library.give_RNA()
-"\n"
+
+
 
 #-----------------main program ----------------------------------------
 print(" Type one if you want to acces replication options.\n Type 2 if you want to acces transcription options.\n Type 3 if you want to acces translation options\n")
-input(a)
+a = input()
 if(a == 1):
     replication_options()
 elif( a == 2):
     transription_options()
-elif( a == 3)
-    trnslation_options()
+elif( a == 3):
+    translation_options()
 
 
 
@@ -44,8 +42,30 @@ elif( a == 3)
 #------------------end of main program------------------------------
 
 def replication_options():
+    DNA_pattern = objects_library.give_DNA()
+    "\n"
+    dna = objects_library.Dna()
+
+
 def transription_options():
-def trnslation_options():
+    DNA_pattern = objects_library.give_DNA()
+    "\n"
+    transkryptor = objects_library.Transkryptor()
+
+
+def translation_options():
+    choice = input("Type 1 if you want to translate DNA string, or 2 if RNA string\n")
+    if(choice == 1):
+        DNA_pattern = objects_library.give_DNA()
+        "\n"
+        translator = objects_library.Translator()
+    elif(choice == 2):
+        RNA_pattern = objects_library.give_RNA()
+        "\n"
+        transkryptor = objects_library.Transkryptor()
+        translator = objects_library.Translator()
+
+
 
 
 
@@ -73,7 +93,4 @@ def trnslation_options():
 
 
 # For later uses
-
-#dna = objects_library.Dna(DNA_pattern)
-#transkryptor = objects_library.Transkryptor(DNA_pattern)
-#translator = objects_library.Translator(RNA_pattern)
+#

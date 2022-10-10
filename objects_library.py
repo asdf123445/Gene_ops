@@ -5,11 +5,11 @@ import string
 
 
 def give_DNA ():
-    DNA_pattern = string(input("Please input DNA string to analyze"))
+    DNA_pattern = (input("Please input DNA string to analyze"))
     return DNA_pattern
 
 def give_RNA ():
-    DNA_pattern = string(input("Please input RNA string to analyze"))
+    RNA_pattern = (input("Please input RNA string to analyze"))
     return RNA_pattern
 
 #------------------------------------class beginning--------------------------------------------
@@ -66,6 +66,23 @@ class Dna :
 
     def show_anti_sense_squences(self, v_replication):
         print(self.replication)
+
+
+#One method to rule them all
+
+    def do_all_replication():
+        self.reformed = check_string(self, string_DNA)
+        self.a = insert("type 1 to show DNA string")
+        if(self.a == 1):
+            show_sequences(self, reformed)
+        self.v_replication = replication(self, reformed)
+        self.b = insert("type 1 to show anti - sence DNA string")
+        if(self.b == 1):
+            show_anti_sense_squences(self, reformed)
+        return self.v_replication
+
+
+
 
 
 #---------------------------------------class end--------------------------------------------
@@ -143,7 +160,18 @@ class Transkryptor:
                 self.z_transcription_w[i] = C
         return self.z_transcription_w
 
-
+#One method to rule them all
+    def do_all_transcriptor():
+        self.reformed = sprawdz_string(self, string_DNA)
+        self.a = insert("type 1 to show DNA string")
+        if(self.a == 1):
+            show_sequences(self, reformed)
+        self.z_transcription = transcription(self, reformed)
+        self.b = insert("type 1 to perform reverse transcription")
+        if(self.b == 1):
+            transcription_reverse(self, reformed)
+            return self.z_transcription_w
+        return self.z_transcription
 
 
 #--------------------------------------------class end--------------------------------
@@ -251,6 +279,15 @@ class Translator:
                 self.protein[i] = "  RRR  ,"
 
         return self.protein
+
+
+#One method to rule them all
+    def do_all_translator(self):
+        self.reformed = check_string(self, string_RNA)
+        self.codons = find_codons(self, reformed)
+        self.protein = translator (self, codons)
+        return self.protein
+
 
 
 
