@@ -4,12 +4,16 @@
 import string
 
 
-DNA_pattern = input(string("please insert DNA string"))
-string(RNA_pattern)
+def give_DNA ():
+    DNA_pattern = string(input("Please input DNA string to analyze"))
+    return DNA_pattern
 
+def give_RNA ():
+    DNA_pattern = string(input("Please input RNA string to analyze"))
+    return RNA_pattern
 
 #------------------------------------class beginning--------------------------------------------
-class Dna (DNA_pattern):
+class Dna :
 
 #constructor
     def __init__ (self, DNA_pattern):
@@ -73,7 +77,7 @@ class Dna (DNA_pattern):
 #---------------------------------------class beginning----------------------------------------
 
 
-class Transkryptor (DNA_pattern):
+class Transkryptor:
 
 #constructor
     def __init__ (self):
@@ -153,7 +157,7 @@ class Transkryptor (DNA_pattern):
 #-------------------------------------------class beginning-----------------------------
 
 #class storing translation operations, from RNA to protein
-class Translator (RNA_pattern):
+class Translator:
 
 #constructor
     def __init__ (self, RNA_pattern):
@@ -197,10 +201,10 @@ class Translator (RNA_pattern):
 
 # self.protein is a list storing individual aminoacids a.k.a  storing protein's pattern'
 # I thought that it will be more efficient to declare the lenght before, instead of using .append over and over
-    self.protein [(len(self.codons))]
+        self.protein [(len(self.codons))]
 
 
-        for i in range (len(self.codons))
+        for i in range (len(self.codons)):
             if(self.codons[i] == AUG):
                 self.protein[i] = "  Met  ,"
             elif(self.codons[i] == UUU or UUC):
