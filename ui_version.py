@@ -1,5 +1,5 @@
 #This is the ui version of gene ops
-#For now it's written in my native language, but soon I'll translate all comments
+#For now it's written in my native language, but soon I'll translate all comments to English
 
 import objects_library
 import gi 
