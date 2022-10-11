@@ -36,9 +36,6 @@ elif( a == 3):
 
 
 
-
-
-
 #------------------end of main program------------------------------
 
 def replication_options():
