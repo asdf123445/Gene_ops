@@ -223,28 +223,30 @@ class Translator:
 
 #checking function
     def check_stringr(self):
-            for i in range (len(self.z_transcription)):
-                if( self.z_transcription[i] == "a" or self.z_transcription[i] == "A"):
+        for i in range (len(self.z_transcription)):
+            if( self.z_transcription[i] == "a" or self.z_transcription[i] == "A"):
                     self.reformed += "A"
-                elif( self.z_transcription[i] == "u" or self.z_transcription[i] == "U"):
+            elif( self.z_transcription[i] == "u" or self.z_transcription[i] == "U"):
                     self.reformed += "U"
-                elif( self.z_transcription [i] == "c" or self.z_transcription[i] == "C"):
+            elif( self.z_transcription [i] == "c" or self.z_transcription[i] == "C"):
                     self.reformed += "C"
-                elif( self.z_transcription[i] == "g" or self.z_transcription[i] == "G"):
+            elif( self.z_transcription[i] == "g" or self.z_transcription[i] == "G"):
                     self.reformed += "G"
-                else:
+            else:
                     print("Error: incorrect sequence")
                     break
-            return self.reformed
-
+        print("reformed", self.reformed) 
+        return self.reformed
+        
 
 
 #Horror begins
     def find_codons (self):
         for i in range (len(self.reformed)):
-            for j in range (len(self.reformed/3)):
+            for j in range (len(self.reformed)/3):
                 self.kodon[j] = self.reformed[i] + self.reformed[i + 1] + self.reformed[i + 2]
-                i = i + 3
+                
+            i += 3
         return self.codons
 
 #translation from codons
@@ -312,8 +314,11 @@ class Translator:
         return self.protein
     
 
-    def do_half_translator(self): 
+    def do_half_translator(self):
+        self.transcription()
+        print("do half")
         self.check_stringr()
+        print(self.reformed)
         self.find_codons()
         self.translator()
         return self.protein
