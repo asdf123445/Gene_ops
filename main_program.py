@@ -32,7 +32,6 @@ def translation_options():
     print("translation options","\n")
     choice = input("Type 1 if you want to translate DNA string, or 2 if RNA string\n")
     if(choice == "1"):
-        print("dupa")
         translator = objects_library.Translator()
         translator.give_DNA() 
         translated = translator.do_half_translator()
