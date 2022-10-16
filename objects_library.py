@@ -49,6 +49,7 @@ class Dna:
             else:
                 print("Error: wrong sequence")
                 break
+                exit()
         return self.reformed
 
 
@@ -130,6 +131,7 @@ class Transcriptor:
             else:
                 print("Error: incorrect sequence")
                 break
+                exit()
         return self.reformed
 
 #the name speaks for itself
@@ -192,6 +194,7 @@ class Translator:
         self.protein = [] 
         self.DNA_pattern = ""
         self.z_transcription = ""
+        self.a = None
 #destructor
     def __del__ (self):
         del self.reformed
@@ -199,6 +202,7 @@ class Translator:
         del self.protein
         del self.DNA_pattern
         del self.z_transcription
+        del self.a 
 #translation from RNA
     def give_RNA (self):
         self.DNA_pattern = (input("Please input RNA string to analyze\n"))
@@ -225,15 +229,25 @@ class Translator:
             else:
                     print("Error: incorrect sequence")
                     break
-        print(self.reformed) 
+                    exit()
         return self.reformed
 
-#check function for RNA
-    def RNA_friend(self):
+    def RNA_friend (self):
         for i in range (len(self.reformed)):
-            if(self.reformed[i] == U):
-                self.reformed[i] = "T"
+            if( self.reformed[i] == "A"):
+                self.z_transcription += "A"
+            elif( self.reformed[i] == "T"):
+                self.z_transcription += "U"
+            elif( self.reformed[i] == "C"):
+                self.z_transcription += "C"
+            elif( self.reformed[i] == "G"):
+                self.z_transcription += "G"
+            elif( self.reformed[i] == "U"):
+                self.z_transcription += "U"
+        self.reformed = self.z_transcription
+        print(self.reformed)
         return self.reformed
+
 
 # transcripting function
     def transcription (self):
@@ -249,14 +263,20 @@ class Translator:
         self.reformed = self.z_transcription
         return self.reformed
 
-       
+#show function
+    def show_sequences(self):
+        self.a = input("type one to show sequences\n")
+        if(self.a == "1"):
+            print(self.reformed)
 
 
 #Horror begins
     def find_codons (self):
         for i in range (len(self.reformed)):
-            if(i%3 ==0):
-                self.codons.append (self.reformed[i-2] + self.reformed[i - 1] + self.reformed[i])    
+            if(i == 0):
+                 self.codons.append (self.reformed[i] + self.reformed[i + 1] + self.reformed[i + 2])     
+            elif(i > 3 and i%3 ==0):
+                self.codons.append (self.reformed[i - 2] + self.reformed[i - 1] + self.reformed[i])    
         return self.codons
 
 #translation from codons
@@ -269,7 +289,7 @@ class Translator:
             if(self.codons[i] == "AUG"):
                 self.protein.append("Met")
             elif(self.codons[i] == "UUU" or self.codons[i] == "UUC"):
-                self.protein,append ("Phe")
+                self.protein.append ("Phe")
             elif(self.codons[i] == "UUA" or self.codons[i] == "UUG" or self.codons[i] == "CUU" or self.codons[i] == "CUC" or self.codons[i] == "CUA" or self.codons[i] == "CUG"):
                 self.protein.append("Leu")
             elif(self.codons[i] == "AUU" or self.codons[i] == "AUC" or self.codons[i] == "AUA"):
@@ -317,20 +337,20 @@ class Translator:
 #One method to rule them all
     def do_all_translator(self):
         self.check_stringr()
-        self.RNA_friend
-        self.find_codons()
-        self.translator ()
-        return self.protein
-    
-
-    def do_half_translator(self):
-        self.check_stringr()
-        self.transcription
-        self.find_codons()
-        self.translator()
+        self.transcription() 
+        self.show_sequences()
+        self.find_codons()  
+        self.translator()   
         return self.protein
         
+    def do_half_translator(self):
+        self.check_stringr()
+        self.RNA_friend() 
+        self.show_sequences()
+        self.find_codons()  
+        self.translator()   
+        return self.protein
+     
 
-
-
+                                  
 #-----------------------------------------------class end-------------------------------------

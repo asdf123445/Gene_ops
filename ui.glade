@@ -19,10 +19,11 @@
             <property name="orientation">vertical</property>
             <property name="spacing">4</property>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="choice_headder">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">label</property>
+                <property name="label" translatable="yes">select 
+the task</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -43,8 +44,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="button_rep">
+                <property name="label" translatable="yes">replication</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -56,8 +57,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="button_transc">
+                <property name="label" translatable="yes">transcription</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -69,8 +70,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
-                <property name="label" translatable="yes">button</property>
+              <object class="GtkButton" id="button_transl">
+                <property name="label" translatable="yes">translation</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -111,10 +112,10 @@
                 <property name="can-focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkAccelLabel" id="main_label">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">label</property>
+                    <property name="label" translatable="yes">option</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -139,10 +140,10 @@
                     <property name="can-focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkAccelLabel">
+                      <object class="GtkLabel" id="opt_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">additional options</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -155,8 +156,8 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">button</property>
+                          <object class="GtkButton" id="button_choice1">
+                            <property name="label" translatable="yes">left</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -169,8 +170,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">button</property>
+                          <object class="GtkButton" id="button_choice2">
+                            <property name="label" translatable="yes">right</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -182,18 +183,6 @@
                             <property name="position">1</property>
                           </packing>
                         </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkAccelLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -202,22 +191,23 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry">
+                      <object class="GtkAccelLabel" id="insert_label">
                         <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="text" translatable="yes">xcvxc zx xcvxcv</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Please insert your code below.</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
+                        <property name="padding">5</property>
                         <property name="position">3</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAccelLabel">
+                      <object class="GtkLabel" id="show_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Do you want to show string?</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -226,12 +216,24 @@
                       </packing>
                     </child>
                     <child>
+                      <object class="GtkEntry" id="insert_spot">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="text" translatable="yes">xcvxc zx xcvxcv</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">7</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">button</property>
+                          <object class="GtkButton" id="buton_showyes">
+                            <property name="label" translatable="yes">yes</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -244,8 +246,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">button</property>
+                          <object class="GtkButton" id="button_showno">
+                            <property name="label" translatable="yes">no</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -261,33 +263,30 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">5</property>
+                        <property name="position">11</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAccelLabel">
+                      <object class="GtkAccelLabel" id="result_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">result</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">6</property>
+                        <property name="position">13</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkTreeView">
+                      <object class="GtkTextView" id="result window">
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
-                        <child internal-child="selection">
-                          <object class="GtkTreeSelection"/>
-                        </child>
                       </object>
                       <packing>
-                        <property name="expand">False</property>
+                        <property name="expand">True</property>
                         <property name="fill">True</property>
-                        <property name="position">7</property>
+                        <property name="position">16</property>
                       </packing>
                     </child>
                   </object>

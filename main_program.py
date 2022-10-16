@@ -34,16 +34,15 @@ def translation_options():
     if(choice == "1"):
         translator = objects_library.Translator()
         translator.give_DNA() 
-        translated = translator.do_half_translator()
+        translated = translator.do_all_translator()
         print(translated)
         return(translated)
         del translator
             
     elif(choice == "2"):
-        print("Andrzej")
         translator = objects_library.Translator()
         translator.give_RNA()
-        translated = translator.do_all_translator()
+        translated = translator.do_half_translator()
         print(translated)
         return(translated)
         del translator
