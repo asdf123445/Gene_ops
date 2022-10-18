@@ -61,6 +61,20 @@ the task</property>
                 <property name="position">2</property>
               </packing>
             </child>
+            <child>
+              <object class="GtkButton" id="panel_button_refresh">
+                <property name="label" translatable="yes">refresh</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack-type">end</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -116,7 +130,7 @@ Please insert the code</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkTextView" id="repolication_text_insert">
+                  <object class="GtkEntry" id="replication_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                   </object>
@@ -202,7 +216,7 @@ Please insert the code:</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkTextView" id="transcription_text_insert">
+                  <object class="GtkEntry" id="transcription_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                   </object>
@@ -339,7 +353,7 @@ Please insert the code:</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkTextView" id="translation_text_insert">
+                  <object class="GtkEntry" id="translation_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                   </object>

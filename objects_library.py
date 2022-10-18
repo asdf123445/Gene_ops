@@ -84,6 +84,11 @@ class Dna:
         return self.v_replication
 
 
+    def refresh (self):
+        self.DNA_pattern = "" 
+        self.reformed = ""
+        self.v_replication = ""
+        
 
 
 
@@ -172,6 +177,12 @@ class Transcriptor:
         print("transcription result\n")
         self.transcription()
         return self.z_transcription
+
+    def refresh (self):
+        self.DNA_pattern = ""
+        self.reformed = ""
+        self.z_transcription = ""
+
 
 
 #--------------------------------------------class end--------------------------------
@@ -352,5 +363,12 @@ class Translator:
         return self.protein
      
 
-                                  
+    def refresh (self):
+        self.reformed = ""
+        self.codons = [] 
+        self.protein = [] 
+        self.DNA_pattern = ""
+        self.z_transcription = ""
+        self.a = None
+
 #-----------------------------------------------class end-------------------------------------
