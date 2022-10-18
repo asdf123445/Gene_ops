@@ -20,7 +20,7 @@ class Dna:
         self.DNA_pattern = "" 
         self.reformed = ""
         self.v_replication = ""
-        
+        self.a = ""
 
 
         
@@ -29,6 +29,7 @@ class Dna:
         del self.DNA_pattern
         del self.reformed
         del self.v_replication
+        del self.a
 
     def give_DNA (self):
         self.DNA_pattern = (input("Please input DNA string to analyze\n"))
@@ -56,7 +57,8 @@ class Dna:
 #the name speaks for itself
     def show_sequences (self):
         print(self.reformed)
-
+    def return_sequences(self):
+        return self.reformed
 #the function arranges DNA pattern after replication
     def replication (self):
         for i in range (len(self.reformed)):
@@ -88,7 +90,14 @@ class Dna:
         self.DNA_pattern = "" 
         self.reformed = ""
         self.v_replication = ""
-        
+        self.a = ""
+
+    def do_all_replication_v(self):
+        self.check_string()
+        if(self.a == "1"):
+            self.return_sequences()
+        self.replication()
+        return self.v_replication
 
 
 
@@ -108,14 +117,14 @@ class Transcriptor:
         self.DNA_pattern = ""
         self.reformed = ""
         self.z_transcription = ""
-
+        self.a = ""
 
 #destructor
     def __del__ (self):
         del self.DNA_pattern
         del self.reformed
         del self.z_transcription
-
+        del self.a
 
     def give_DNA (self):
         self.DNA_pattern = (input("Please input DNA string to analyze\n"))
@@ -142,6 +151,8 @@ class Transcriptor:
 #the name speaks for itself
     def show_sequences (self):
         print(self.reformed)
+    def return_sequences (self):
+        return self.reformed
 
 #transcripting function, DNA to RNA
     def transcription (self):
@@ -168,20 +179,19 @@ class Transcriptor:
         self.transcription()
         return self.z_transcription
 
-    def do_all_transcriptor_tb(self):
-        self.DNA_pattern = give_DNA
-        self.reformed = sprawdz_string()
-        self.a = input("type 1 to show DNA string   ")
+    def do_all_transcriptor_v(self):
+        self.check_stringr()
         if(self.a == "1"):
-            self.show_sequences()
-        print("transcription result\n")
+            self.return_sequences()
         self.transcription()
         return self.z_transcription
+
 
     def refresh (self):
         self.DNA_pattern = ""
         self.reformed = ""
         self.z_transcription = ""
+        self.a = ""
 
 
 
@@ -205,7 +215,7 @@ class Translator:
         self.protein = [] 
         self.DNA_pattern = ""
         self.z_transcription = ""
-        self.a = None
+        self.a = ""
 #destructor
     def __del__ (self):
         del self.reformed
@@ -280,6 +290,8 @@ class Translator:
         if(self.a == "1"):
             print(self.reformed)
 
+    def return_sequences (self):
+        return self.reformed
 
 #Horror begins
     def find_codons (self):
@@ -362,6 +374,23 @@ class Translator:
         self.translator()   
         return self.protein
      
+    def do_all_translator_v(self):
+        self.check_stringr()
+        self.transcription()
+        if(self.a == "1"):
+            self.return_sequences()
+        self.find_codons()  
+        self.translator()   
+        return self.protein
+        
+    def do_half_translator_v(self):
+        self.check_stringr()
+        self.RNA_friend()
+        if(self.a == "1"):
+            self.return_sequences()
+        self.find_codons()  
+        self.translator()   
+        return self.protein
 
     def refresh (self):
         self.reformed = ""
@@ -369,6 +398,6 @@ class Translator:
         self.protein = [] 
         self.DNA_pattern = ""
         self.z_transcription = ""
-        self.a = None
+        self.a = ""
 
 #-----------------------------------------------class end-------------------------------------

@@ -29,7 +29,7 @@ class Main:
         self.transcriptor = objects_library.Transcriptor()
         self.translator = objects_library.Translator()
     #to keep the code clean i wrote second constructor for buttons etc
-    def __init__(self):
+
 
 
 
@@ -56,7 +56,7 @@ class Main:
 
 
 
-
+    
 
 
 #function for initiating all buttons etc. to keep the consctructor clean
@@ -64,10 +64,22 @@ class Main:
         #refresh button
         refresh_button = self.builder.get_objects("panel_button_refresh")
         refresh_button.connect("clicked", self.refresh_all)
- 
 
+        #block of code using show string buttons
+        show_button_repl = self.builder.get_objects("replication_button_check")
+        show_button_transc = self.builder.get_objects("transcription_button_check")
+        show_button_transl = self.builder.get_objects("translation_button_check")
+        show_button_repl.connect("toggled", self.show_string)
+        show_button_transc.connect("toggled", self.show_string)
+        show_button_transc.connect("toggled", self.show_string)
 
-   #function for refresh button 
+    def show_string (self):
+        self.replicator.a = "1"
+        self.transcriptor.a = "1"
+        self.translator.a = "1"
+        
+
+#function for refresh button 
     def refresh_all (self):
         self.replicator.refresh()
         self.transcriptor.refresh()
