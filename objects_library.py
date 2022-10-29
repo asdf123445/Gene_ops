@@ -97,6 +97,8 @@ class Dna:
         if(self.a == "1"):
             self.return_sequences()
         self.replication()
+        return self.return_sequences
+        print("\n\n")
         return self.v_replication
 
 
@@ -184,6 +186,8 @@ class Transcriptor:
         if(self.a == "1"):
             self.return_sequences()
         self.transcription()
+        return self.return_sequences()
+        print("\n\n")
         return self.z_transcription
 
 
@@ -216,6 +220,7 @@ class Translator:
         self.DNA_pattern = ""
         self.z_transcription = ""
         self.a = ""
+        self.b = ""
 #destructor
     def __del__ (self):
         del self.reformed
@@ -224,6 +229,7 @@ class Translator:
         del self.DNA_pattern
         del self.z_transcription
         del self.a 
+        del self.b
 #translation from RNA
     def give_RNA (self):
         self.DNA_pattern = (input("Please input RNA string to analyze\n"))
@@ -380,7 +386,9 @@ class Translator:
         if(self.a == "1"):
             self.return_sequences()
         self.find_codons()  
-        self.translator()   
+        self.translator() 
+        return self.return_sequences
+        print("\n\n")
         return self.protein
         
     def do_half_translator_v(self):
@@ -389,7 +397,9 @@ class Translator:
         if(self.a == "1"):
             self.return_sequences()
         self.find_codons()  
-        self.translator()   
+        self.translator() 
+        return self.return_sequences
+        print("\n\n")
         return self.protein
 
     def refresh (self):
@@ -399,5 +409,6 @@ class Translator:
         self.DNA_pattern = ""
         self.z_transcription = ""
         self.a = ""
+        self.b = ""
 
 #-----------------------------------------------class end-------------------------------------

@@ -67,6 +67,7 @@ the task</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="refresh_all" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -133,6 +134,7 @@ Please insert the code</property>
                   <object class="GtkEntry" id="replication_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <signal name="changed" handler="insert_repl" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -147,6 +149,7 @@ Please insert the code</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
                     <property name="draw-indicator">True</property>
+                    <signal name="toggled" handler="show_string_rp" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -160,6 +163,7 @@ Please insert the code</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="go_repl" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -187,7 +191,7 @@ Please insert the code</property>
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">5</property>
+                    <property name="position">6</property>
                   </packing>
                 </child>
               </object>
@@ -219,6 +223,7 @@ Please insert the code:</property>
                   <object class="GtkEntry" id="transcription_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <signal name="changed" handler="insert_transc" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -233,6 +238,7 @@ Please insert the code:</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
                     <property name="draw-indicator">True</property>
+                    <signal name="toggled" handler="show_string_tc" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -246,6 +252,7 @@ Please insert the code:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="go_transc" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -273,7 +280,7 @@ Please insert the code:</property>
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">5</property>
+                    <property name="position">6</property>
                   </packing>
                 </child>
               </object>
@@ -313,6 +320,7 @@ Please insert the code:</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="replop1" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -326,6 +334,7 @@ Please insert the code:</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
+                        <signal name="clicked" handler="replop2" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -356,6 +365,7 @@ Please insert the code:</property>
                   <object class="GtkEntry" id="translation_entry">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <signal name="changed" handler="insert_transl" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -370,6 +380,7 @@ Please insert the code:</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
                     <property name="draw-indicator">True</property>
+                    <signal name="toggled" handler="show_string_tl" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -383,6 +394,7 @@ Please insert the code:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="go_transl" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -410,7 +422,7 @@ Please insert the code:</property>
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">7</property>
+                    <property name="position">8</property>
                   </packing>
                 </child>
               </object>

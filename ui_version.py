@@ -2,8 +2,8 @@
 #For now it's written in my native language, but soon I'll translate all comments to English
 
 #Also this is really early verion of the file so nothing works and nothing makes any sense :)
-
 import objects_library
+import func
 import gi 
 #gtk module
 
@@ -16,7 +16,7 @@ from gi.repository import Gtk as gtk
 
 
 
-class Main:
+class Main(func.Functions):
     def __init__ (self):
         gladeFile = "ui.glade"
         self.builder = gtk.Builder()
@@ -28,8 +28,8 @@ class Main:
         self.replicator = objects_library.Dna()
         self.transcriptor = objects_library.Transcriptor()
         self.translator = objects_library.Translator()
-    #to keep the code clean i wrote second constructor for buttons etc
 
+        
 
 
 
@@ -38,74 +38,30 @@ class Main:
         del self.replicator
         del self.transcriptor
         del self.translator
-
     
-
-   
-        
-
-
-
-
-
-
-
-
-
-
-
 
 
     
 
 
-#function for initiating all buttons etc. to keep the consctructor clean
-    def create_widgets (self):
-        #refresh button
-        refresh_button = self.builder.get_objects("panel_button_refresh")
-        refresh_button.connect("clicked", self.refresh_all)
 
-        #block of code using show string buttons
-        show_button_repl = self.builder.get_objects("replication_button_check")
-        show_button_transc = self.builder.get_objects("transcription_button_check")
-        show_button_transl = self.builder.get_objects("translation_button_check")
-        show_button_repl.connect("toggled", self.show_string)
-        show_button_transc.connect("toggled", self.show_string)
-        show_button_transc.connect("toggled", self.show_string)
 
-    def show_string (self):
-        self.replicator.a = "1"
-        self.transcriptor.a = "1"
-        self.translator.a = "1"
-        
 
-#function for refresh button 
-    def refresh_all (self):
-        self.replicator.refresh()
-        self.transcriptor.refresh()
-        self.translator.refresh()
 
-#function for replication input field in glade
-    def insert_repl (self):
-        repl = self.builder.get_object("replication_entry")
-        self.repltask = repl.get_text().strip()
-        return self.repltask
-#function for transcription input field in glade   
-    def insert_transc(self):
-        transc = self.builder.get_object("replication_entry")
-        self.transctask = transc.get_text().strip()
-        return self.transctask
-#function for translation input field in glade
-    def insert_transl(self):
-        transl = self.builder.get_object("translation_entry")
-        self.transltask = transl.get_text().strip()
-        return self.transltask
+
+
+
+
+
 
 
 
 
 main = Main()
 gtk.main()
+main.create_all_widgets()
+
+
 
 
 
