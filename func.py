@@ -27,10 +27,12 @@ class Functions:
         del self.transc_text
         del self.transl_text
 
+
     def create_widgets (self):
         #refresh button
         refresh_button = self.builder.get_objects("panel_button_refresh")
         refresh_button.connect("clicked", self.refresh_all)
+
     def create_widgets2 (self):
         #block of code using show string buttons
         show_button_repl = self.builder.get_objects("replication_button_check")
@@ -60,9 +62,9 @@ class Functions:
 
     def create_widgets5 (self):
         #creator and connector of results text fields
-        repl_text = self.builder.get_objects("replication_text_results")
-        transc_text = self.builder.get_objects("transcription_text_results")
-        transl_text = self.builder.get_objects("translation_text_results")
+        self.repl_text = self.builder.get_objects("replication_text_results")
+        self.transc_text = self.builder.get_objects("transcription_text_results")
+        self.transl_text = self.builder.get_objects("translation_text_results")
         
     def create_widgets6 (self):
         repl_opt1 = self.builder.get_objects("translation_button_left")
@@ -95,7 +97,7 @@ class Functions:
         self.translator.b = "1"
 
 #function for refresh button
-    def refresh_all (self):
+    def refresh_all (self, objects_library):
         self.replicator.refresh()
         self.transcriptor.refresh()
         self.translator.refresh()
@@ -118,17 +120,16 @@ class Functions:
 
 
 #functions for go button
-    def go_repl (self, replicator):
-        return self.replicator.do_all_replication_v()
-
-    def go_transc(self,transcriptor):
-        return self.transcriptor.do_all_transcriptor_v()
-
-    def go_transl(self, translator):
+    def go_repl (self, replicator, repl_text):
+        repl_text.TextBuffer.set_text(self.replicator.do_all_replication_v())
+    
+    def go_transc(self,transcriptor, transc_text):
+        transc_text.TextBuffer.set_text(self.transcriptor.do_all_transcriptor_v())        
+    def go_transl(self, translator, transl_text):
         if(self.translator.b == "0"):
-            return self.translator.do_half_translator_v()
+            transc_text.TextBuffer.set_text(self.translator.do_half_translator_v())
         elif(self.translator.b =="1"):
-            return self.translator.do_all_translator_v()
+            transl_text.TextBuffer.set.text(self.translator.do_all_translator_v())
 
 
 

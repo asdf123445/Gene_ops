@@ -2,6 +2,7 @@
 #For now it's written in my native language, but soon I'll translate all comments to English
 
 #Also this is really early verion of the file so nothing works and nothing makes any sense :)
+
 import objects_library
 import func
 import gi 
@@ -58,9 +59,9 @@ class Main(func.Functions):
 
 
 main = Main()
-gtk.main()
-main.create_all_widgets()
 
+main.create_all_widgets()
+gtk.main()
 
 
 
